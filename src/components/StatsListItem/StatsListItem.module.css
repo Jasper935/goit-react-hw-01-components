@@ -1,0 +1,34 @@
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    width: calc(100% / 5);
+    color: #fff;
+  
+    font-weight: 300;
+  }
+  
+  .item:nth-child(1) {
+    /* border-radius: 5px; */
+    background-color: #5e6e77;
+  }
+  .item:nth-child(2) {
+    background-color: #f59140;
+  }
+  .item:nth-child(3) {
+    background-color: #5f2a35;
+  }
+  .item:nth-child(4) {
+    background-color: #446a6e;
+  }
+  .item:nth-child(5) {
+    
+    background-color: #604a75;
+    /* border-radius: 5px; */
+  }
+  
+  .percentage {
+    font-weight: 600;
+    font-size: 20px;
+  }

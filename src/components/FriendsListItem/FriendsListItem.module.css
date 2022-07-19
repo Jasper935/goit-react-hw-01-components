@@ -1,0 +1,32 @@
+
+.item{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    /* &:last-child{
+    background: #000;
+    border-bottom: 0px;
+    } */
+    
+}
+.text{
+margin-left: 15px;
+}
+
+.green{
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin:0 25px ;
+}
+.red{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin:0 25px ;
+}
+
+
+

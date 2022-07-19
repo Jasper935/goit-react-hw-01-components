@@ -1,0 +1,17 @@
+.statistics {
+    
+    background-color: #f6f1f1;
+    text-align: center;
+    width: 400px;
+  
+    border-radius: 3px;
+    
+    border: 2px solid black;
+    border-bottom: 0px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .2) inset;
+  }
+.title {
+    display: block;
+    margin: 15px 15px
+  }
