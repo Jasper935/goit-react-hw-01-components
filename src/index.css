@@ -1,9 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-  background: linear-gradient(rgb(96, 152, 226),  rgb(240, 234, 235));
-
-   
   margin: 0;
   
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,22 +13,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-ul{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-p{
-  margin: 0;
-  padding: 0;
-}
-h2{
-  margin: 0;
-  padding: 0;
-}
-#root{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

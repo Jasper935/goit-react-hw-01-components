@@ -1,33 +1,43 @@
-import user from '../data/user.json';
-import StatsData from '../data/data.json';
-import friends from '../data/friends.json';
-import transactions from '../data/transactions.json';
-import { Profile } from './Profile/Profile';
-import { StatsList } from './StatsList/StatsList';
+import { Component } from 'react';
 import { Section } from './Section/Section';
-import { FriendsList } from './FriendsList/FriendsList';
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-export const App = () => {
-  const { username, tag, location, avatar, stats, id } = user;
+import { Statistic } from './Statistic/Statistic';
+import { Feedback } from './Feedback/Feedback';
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+  onClick = evt => {
+    this.setState(prevState =>{
+      return {[evt.target.name]: prevState[evt.target.name] + 1}}
+    );
+  };
 
-  return (
-    <>
-      <Profile
-        username={username}
-        tag={tag}
-        location={location}
-        avatar={avatar}
-        stats={stats}
-        id={id}
-      />
+  totalFeedbacks=()=>{
+   return Object.values(this.state).reduce((acc, el)=>
+    acc+=el ,0)
+  }
+  percentage=()=>{
+   return  Math.round((this.state.good*100)/this.totalFeedbacks())
+  }
 
-      <Section title='Upload stats'>
-        <StatsList StatsData={StatsData}/> 
-      </Section>
-
-    <FriendsList friends={friends}/>
-    <TransactionHistory transactions={transactions}/>
-    </>
-    
-  );
-};
+  render() {
+    return (
+      <>
+        <Section title="Please leave a feedback">
+          <Feedback elements={Object.keys(this.state)} onClick={this.onClick} />
+        </Section>
+        <Section title="Statistics">
+          {this.totalFeedbacks()>0?<Statistic
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.totalFeedbacks()}
+            positivePercentage={this.percentage()}
+          />:<p>There is no feedback</p>}
+        </Section>
+      </>
+    );
+  }
+}
