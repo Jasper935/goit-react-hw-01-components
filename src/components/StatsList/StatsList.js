@@ -11,7 +11,10 @@ export const StatsList = ({ StatsData }) => {
     )
 }
 StatsList.propTypes = {
-    label: PropTypes.string,
-    percentage: PropTypes.number,
-    id: PropTypes.string
-  }
+    StatsData: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string,
+        percentage: PropTypes.number,
+        id: PropTypes.string
+    })),
+
+}
